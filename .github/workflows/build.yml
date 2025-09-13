@@ -154,12 +154,12 @@ jobs:
         if: ${{github.event_name != 'pull_request' && matrix.os-type == 'macOS'}}
         working-directory: ${{runner.workspace}}/build
         run: codesign --sign "${codesign_identity}" --keychain signing_temp.keychain --deep --force --verbose *_artefacts/"${build_type}"/VST3/*.vst3 *_artefacts/"${build_type}"/AU/*.component
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         if: ${{matrix.artifacts == 'yes'}}
         with:
           name: ${{matrix.display-name}} VST3
           path: "${{runner.workspace}}/build/*_artefacts/${{env.build_type}}/VST3/*.vst3"
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         if: ${{matrix.os-type == 'macOS' && matrix.artifacts == 'yes'}}
         with:
           name: ${{matrix.display-name}} AU
