@@ -22,7 +22,7 @@ jobs:
             runs-on: windows-latest
             platform: x86
             release-arch: Win32
-            cmake-generator: Visual Studio 16 2019
+            cmake-generator: Visual Studio 17 2022
             os-type: Windows
             shell: pwsh
             artifacts: yes
@@ -31,7 +31,7 @@ jobs:
             runs-on: windows-latest
             platform: x64
             release-arch: x64
-            cmake-generator: Visual Studio 16 2019
+            cmake-generator: Visual Studio 17 2022
             os-type: Windows
             shell: pwsh
             artifacts: yes
